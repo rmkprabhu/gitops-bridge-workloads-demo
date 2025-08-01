@@ -1,0 +1,6 @@
+apiVersion: v2
+name: gitops-bridge-workloads-demo
+description: A Helm chart for nginx with ConfigMap–driven content
+type: application
+version: 0.1.0
+appVersion: "1.21"
