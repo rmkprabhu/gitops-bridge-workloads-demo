@@ -1,0 +1,28 @@
+name: Build and push to ACR
+
+on:
+  push:
+    paths:
+      - 'app/**'
+      - '.github/workflows/build-and-push-acr.yml'
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: sample-app
+    steps:
+      - uses: actions/checkout@v4
+      - name: Login to ACR
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.ACR_LOGIN_SERVER }}
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+
+      - name: Build and push image
+        uses: docker/build-push-action@v4
+        with:
+          context: ./app
+          push: true
+          tags: ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest

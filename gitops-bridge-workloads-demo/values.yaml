@@ -10,6 +10,13 @@ image:
   pullPolicy: IfNotPresent
   tag: "stable"
 
+# ACR image configuration for the sample-app container
+acrImage:
+  repository: "azurecbepe.azurecr.io/sample-app" # Set to your ACR login server, e.g., myregistry.azurecr.io/sample-app
+  pullPolicy: IfNotPresent
+  tag: "latest"
+  enabled: true # Set to true to enable the ACR container
+
 
 configMap:
   htmlContent: |

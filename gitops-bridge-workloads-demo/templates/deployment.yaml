@@ -64,6 +64,19 @@ spec:
             {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
             {{- end }}
+        {{- if .Values.acrImage.enabled }}
+        - name: sample-app
+          image: "{{ .Values.acrImage.repository }}:{{ .Values.acrImage.tag }}"
+          imagePullPolicy: {{ .Values.acrImage.pullPolicy }}
+          ports:
+            - name: app
+              containerPort: 3000
+              protocol: TCP
+          {{- with .Values.resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+        {{- end }}
       volumes:
         - name: html
           configMap:
