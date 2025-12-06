@@ -14,11 +14,9 @@ image:
 configMap:
   htmlContent: |
     <html>
-      <head><title>Welcome to Platform Engineering Event</title></head>
+      <head><title>Welcome to Azure user group event</title></head>
       <body>
         <h1>Hello from ConfigMap!</h1>
-        <h1>Thanks for sticking through the end of the demo</h1>
-        <h1>next session is about Platform Engineering - Port</h1>
       </body>
     </html>
 
