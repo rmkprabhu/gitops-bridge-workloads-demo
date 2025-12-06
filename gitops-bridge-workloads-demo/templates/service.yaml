@@ -11,5 +11,11 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+    {{- if .Values.acrImage.enabled }}
+    - port: {{ .Values.service.appPort }}
+      targetPort: app
+      protocol: TCP
+      name: app
+    {{- end }}
   selector:
     {{- include "gitops-bridge-workloads-demo.selectorLabels" . | nindent 4 }}
