@@ -12,7 +12,7 @@ image:
 
 # ACR image configuration for the sample-app container
 acrImage:
-  repository: "azurecbepe.azurecr.io/sample-app" # Set to your ACR login server, e.g., myregistry.azurecr.io/sample-app
+  repository: "aksaugpedemo.azurecr.io/sample-app" # Set to your ACR login server, e.g., myregistry.azurecr.io/sample-app
   pullPolicy: Always
   tag: "latest"
   enabled: true # Set to true to enable the ACR container
