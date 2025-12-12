@@ -51,7 +51,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          images: ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          images: ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest
 
       - name: Azure CLI - Restart Web App
         uses: azure/CLI@v1
@@ -61,7 +61,7 @@ jobs:
 
       - name: Check deployment status
         run: |
-          echo "Deployment completed!"
+          echo "Deployment completed!!"
           echo "Web App URL: https://azure-demo-webapp-abekhkd7gah9ccbt.canadacentral-01.azurewebsites.net"
           echo "Image deployed: ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
 
