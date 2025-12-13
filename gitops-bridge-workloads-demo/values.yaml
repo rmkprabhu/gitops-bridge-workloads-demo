@@ -24,7 +24,7 @@ configMap:
       <head><title>Welcome to Azure user group event</title></head>
       <body>
         <h1>Welcome to Azure user group event</h1>
-        <h1>Hello from ConfigMap update 1</h1>
+        <h1>Making a live change</h1>
       </body>
     </html>
 
